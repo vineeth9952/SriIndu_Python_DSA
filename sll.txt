@@ -1,23 +1,22 @@
-class Node:
+class Node :
     def __init__(self, data):
         self.data = data 
         self.next = None 
-        
+
 class SinglyLinkedList:
     def __init__(self):
         self.Head = None 
     
-    def InsertAtEnd(self,data):
+    def InsertAtEnd(self, data):
         newnode = Node(data)
-        if self.Head == None:
+        if self.Head == None :
             self.Head = newnode
-        else:
+        else :
             temp = self.Head
-            while temp.next != None:
+            while(temp.next != None):
                 temp = temp.next 
-            temp.next = newnode
-    
-    
+            temp.next = newnode  
+            
     def InsertAtBegin(self, data):
         newnode = Node(data)
         if self.Head == None:
@@ -25,41 +24,51 @@ class SinglyLinkedList:
         else:
             newnode.next = self.Head
             self.Head = newnode
-        
+    
     def InsertAtPosition(self, pos, data):
         newnode = Node(data)
         temp = self.Head
         while(pos-1 != 0):
-            temp = temp.next 
-            pos = pos-1
-        
-        newnode.next = temp.next 
+            temp = temp.next
+            pos -= 1 
+        newnode.next = temp.next
         temp.next = newnode
-     
+    
     def DeleteAtEnd(self):
         if self.Head == None:
-            print("List is Empty")
+            print("List is empty")
         elif self.Head.next == None:
             self.Head = None
         else:
-            temp = self.Head 
-            while(temp.next.next != None):
-                temp = temp.next 
-            
+            temp = self.Head
+            while( temp.next.next != None):
+                temp = temp.next
             temp.next = None
     
-    def DeleteAtBegin(self):
+    def DeleteAtBeg(self):
         if self.Head == None:
-            print("List is Empty")
-        elif self.Head.next == None:
-            self.Head = None
+            print("List is empty")
         else:
-            self.Head = self.Head.next
-       
-    def Display(self):
-        temp = self.Head 
-        while(temp!=None):
-            print(temp.data, end=' ')
-            temp = temp.next 
+            self.Head = self.Head.next 
+    
+    def DeleteAtPosition(self, pos):
+        if (pos==1):
+            self.Head = self.Head.next 
+        else:
+            temp = self.Head
+            while(pos-2):
+                temp = temp.next
+                pos = pos - 1
             
+            temp.next = temp.next.next
+        
+        
+            
+    def Display(self):
+        temp = self.Head
+        while(temp !=None):
+            print(temp.data,end=' ')
+            temp = temp.next
+        
+    
 sll = SinglyLinkedList()
