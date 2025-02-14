@@ -51,8 +51,6 @@ if __name__ == "__main__":
             Enqueue(data)
         elif ip==2:
             Dequeue()
-        elif ip==3:
-            PEEK()
         elif ip==4:
             Display()
         elif ip==-1:
