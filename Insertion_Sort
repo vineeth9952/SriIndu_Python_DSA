@@ -1,0 +1,18 @@
+def Insertion_sort(arr, n):
+
+    for i in range(0,n):
+        minidx = arr[i] 
+        j = i-1 
+        while(j>=0 and minidx<arr[j]):
+            arr[j+1] = arr[j]
+            j -= 1 
+        
+        arr[j+1] = minidx
+    
+    
+arr = list(map(int,input().split()))
+n = len(arr)
+
+print("Before Sorting :- ",arr)
+Insertion_sort(arr, n)
+print("After Sorting :- ",arr)
