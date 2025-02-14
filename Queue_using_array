@@ -15,7 +15,9 @@ def Enqueue(data):
 def Dequeue():
     global front
     global rear
-    if front == rear:
+    if front==-1 and rear==-1:
+        print("Queue is Empty")
+    elif front == rear:
         print(queue[front],"is dequeued from queue")
         queue.pop(0)
         front = rear = -1 
